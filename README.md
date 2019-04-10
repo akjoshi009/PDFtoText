@@ -1,1 +1,1 @@
-# PDFtoText
+# SmartPdfToText
