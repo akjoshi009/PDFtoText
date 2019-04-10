@@ -73,7 +73,7 @@ app.layout = html.Div(
 def save_file(name, content):
     """Decode and store a file uploaded with Plotly Dash."""
     data = content.encode("utf8").split(b";base64,")[1]
-    with open(os.path.join(TEMPLATE_DIRS, name), "wb") as fp:
+    with open(os.path.join('/app/', name), "wb") as fp:
         fp.write(base64.decodebytes(data))
 
 
@@ -81,7 +81,7 @@ def uploaded_files():
     """List the files in the upload directory."""
     files = []
     for filename in os.listdir(templateDir):
-        path = os.path.join(TEMPLATE_DIRS, filename)
+        path = os.path.join('/app/', filename)
         if os.path.isfile(path):
             files.append(filename)
     return files
