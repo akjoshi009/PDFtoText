@@ -100,7 +100,7 @@ def update_output(uploaded_filenames, uploaded_file_contents):
                 #print('Filetype is perfect')
                 save_file(name, data)
                 #print('jghjghjg hjhjhjh hhkhhjhj bnbjbnb')
-                path = os.path.join(TEMPLATE_DIRS, name)
+                path = os.path.join('/app/', name)
                 doc = fitz.open(path) 
                 page = doc.loadPage(0)
                 img=page.getPixmap()
