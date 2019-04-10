@@ -8,7 +8,7 @@ import dash_bootstrap_components as dbc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import fitz
-import pytesseract
+import tesseract
 import numpy as np
 from PIL import Image
 import io
@@ -110,7 +110,7 @@ def update_output(uploaded_filenames, uploaded_file_contents):
                 hpercent = (baseheight / float(img3.size[1]))
                 wsize = int((float(img3.size[0]) * float(hpercent)))
                 img4 = img3.resize((wsize, baseheight), Image.ANTIALIAS)
-                imagetext = pytesseract.image_to_string(img4)
+                imagetext = tesseract.image_to_string(img4)
                 return imagetext
                 
             else:
